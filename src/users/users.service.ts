@@ -6,7 +6,6 @@ import {
 import * as bcrypt from 'bcrypt';
 
 import { GetUserArgs } from './dto/args/get-user.args';
-import { GetUsersArgs } from './dto/args/get-users.args';
 import { CreateUserInput } from './dto/input/create-user.input';
 import { DeleteUserInput } from './dto/input/delete-user.input';
 import { UpdateUserUnput } from './dto/input/update-user.input';
@@ -46,7 +45,7 @@ export class UsersService {
     return this.toModel(userDocument);
   }
 
-  async findAll(getUsersArgs: GetUsersArgs) {
+  async findAll() {
     return await this.usersRepository.find({});
   }
 

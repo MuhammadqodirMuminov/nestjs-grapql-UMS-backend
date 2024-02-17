@@ -1,6 +1,5 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { GetUserArgs } from './dto/args/get-user.args';
-import { GetUsersArgs } from './dto/args/get-users.args';
 import { CreateUserInput } from './dto/input/create-user.input';
 import { DeleteUserInput } from './dto/input/delete-user.input';
 import { UpdateUserUnput } from './dto/input/update-user.input';
@@ -12,8 +11,8 @@ export class UsersResolver {
   constructor(private readonly usersService: UsersService) {}
 
   @Query(() => [User], { nullable: true, name: 'users' })
-  async getUsers(@Args() getUsersArgs: GetUsersArgs) {
-    return await this.usersService.findAll(getUsersArgs);
+  async getUsers() {
+    return await this.usersService.findAll();
   }
 
   @Query(() => User, { nullable: true, name: 'user' })
