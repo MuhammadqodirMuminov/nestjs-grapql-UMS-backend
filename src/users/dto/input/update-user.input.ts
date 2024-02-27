@@ -13,6 +13,11 @@ export class UpdateUserUnput {
   email: string;
 
   @Field()
+  @IsString()
+  @IsNotEmpty()
+  image: string;
+
+  @Field()
   @IsOptional()
   @IsString()
   password: string;

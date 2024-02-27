@@ -20,6 +20,7 @@ export class UsersService {
     await this.validateUserData(createUserData);
     const createdUser = await this.usersRepository.create({
       ...createUserData,
+      image: createUserData.image,
       password: await bcrypt.hash(createUserData.password, 10),
     });
 
@@ -83,6 +84,7 @@ export class UsersService {
     return {
       _id: userDocument._id.toHexString(),
       email: userDocument.email,
+      image: userDocument.image,
     };
   }
 }

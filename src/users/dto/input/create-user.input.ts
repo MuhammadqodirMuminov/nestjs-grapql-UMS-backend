@@ -11,5 +11,10 @@ export class CreateUserInput {
   @Field()
   @IsString()
   @IsNotEmpty()
+  image: string;
+
+  @Field()
+  @IsString()
+  @IsNotEmpty()
   password: string;
 }

@@ -5,4 +5,7 @@ import { AbstractModel } from 'src/common/abstract.model';
 export class User extends AbstractModel {
   @Field()
   readonly email: string;
+
+  @Field()
+  readonly image: string;
 }

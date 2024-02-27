@@ -7,6 +7,9 @@ export class UserDocument extends AbstractDocument {
   email: string;
 
   @Prop()
+  image: string;
+
+  @Prop()
   password: string;
 }
 
